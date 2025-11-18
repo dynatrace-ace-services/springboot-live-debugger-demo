@@ -10,8 +10,9 @@ public class DemoController {
 
     @GetMapping("/divide")
     public int sayHello(@RequestParam int by) {
-        int dividend = by - 1;
-        int result = 10/dividend;
+        int divisor = by - 1;
+        int dividend = 10;
+        int result = dividend/divisor;
         return result;
     }
 }
