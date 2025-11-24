@@ -8,11 +8,17 @@ import org.springframework.web.bind.annotation.RequestParam;
 @RestController
 public class DemoController {
 
-    @GetMapping("/divide")
+    @GetMapping("/divide-ten")
     public int sayHello(@RequestParam int by) {
-        int divisor = by - 1;
-        int dividend = 10;
-        int result = dividend/divisor;
-        return result;
+        try {
+            int divisor = by - 1;
+            int dividend = 10;
+            int result = dividend/divisor;
+            return result;
+        } catch (Exception e) {
+            // Catch any exception and throw a new one
+            throw new RuntimeException("A very ambiguous exception", e);
+        }
+
     }
 }
